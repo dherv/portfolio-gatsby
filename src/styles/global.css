@@ -1,6 +1,8 @@
 :root {
   --text-color: #484848;
+  --text-color-dark: #212121;
   --border-color: #d2d2d2;
+  --padding-container: 1.5rem 2rem;
 }
 
 html {
