@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Pandas`,
+    title: `Portfolio`,
   },
   plugins: [
     {
@@ -17,6 +17,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
     {
@@ -26,4 +27,4 @@ module.exports = {
       },
     },
   ],
-}
+};
