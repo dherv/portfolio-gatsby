@@ -1,0 +1,4 @@
+.container {
+  padding: var(--padding-container);
+  font-family: "Barlow Condensed", sans-serif;
+}
