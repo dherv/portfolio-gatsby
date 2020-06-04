@@ -1,8 +1,8 @@
 import React from "react";
-import IconReact from "./IconReact";
-import IconVue from "./IconVue";
-import IconLaravel from "./IconLaravel";
-import IconNode from "./IconNode";
+import IconReact from "./icon-react";
+import IconVue from "./icon-vue";
+import IconLaravel from "./icon-laravel";
+import IconNode from "./icon-node";
 
 const Icon = ({ name, ...rest }) => {
   const iconLibrary = new Map([
