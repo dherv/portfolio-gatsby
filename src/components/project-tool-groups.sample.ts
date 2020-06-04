@@ -1,7 +1,5 @@
-import React from "react";
-
 export const sampleProps = {
-  toolGroups: {
+  tools: {
     backend: ["node", "express", "mysql"],
     frontend: ["react"],
     testing: ["jest"],
