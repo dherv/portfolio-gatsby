@@ -3,7 +3,7 @@ export interface INavLink {
   href: string;
 }
 
-export interface IProject {
+export interface IProjectSelect {
   id: number | string;
   title: string;
   frontend: { name: string; component: JSX.Element };

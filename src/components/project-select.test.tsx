@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import ProjectList from "./project-list";
-import { sampleProps } from "./project-list.sample";
+import ProjectList from "./project-select";
+import { sampleProps } from "./project-select.sample";
 
 test("should display multiple list items", () => {
   render(<ProjectList {...sampleProps} />);

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import ProjectListItem from "./project-list-item";
-import { IProject } from "../types/interfaces";
+import ProjectListItem from "./project-select-item";
+import { IProjectSelect } from "../types/interfaces";
 
 const ProjectList: FC<Props> = ({ projects }) => {
   return (
@@ -13,6 +13,6 @@ const ProjectList: FC<Props> = ({ projects }) => {
 };
 
 interface Props {
-  projects: IProject[];
+  projects: IProjectSelect[];
 }
 export default ProjectList;

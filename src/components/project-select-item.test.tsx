@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import ProjectListItem from "./project-list-item";
-import { sampleProps } from "./project-list-item.sample";
+import ProjectListItem from "./project-select-item";
+import { sampleProps } from "./project-select-item.sample";
 
 test("should display a title", () => {
   render(<ProjectListItem {...sampleProps} />);

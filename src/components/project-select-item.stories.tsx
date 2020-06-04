@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectListItem from "./project-list-item";
-import { sampleProps } from "./project-list-item.sample";
+import ProjectListItem from "./project-select-item";
+import { sampleProps } from "./project-select-item.sample";
 
 export default {
   title: "ProjectListItem",

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { sampleProps as projectListItemSampleProps } from "./project-list-item.sample";
+import { sampleProps as projectListItemSampleProps } from "./project-select-item.sample";
 
 export const sampleProps = {
   projects: [

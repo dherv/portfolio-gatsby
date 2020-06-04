@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./project-list-item.module.css";
+import styles from "./project-select-item.module.css";
 
 const ProjectListItem: FC<Props> = ({ title, frontend, backend }) => {
   return (
