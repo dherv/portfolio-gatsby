@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import ProjectTool from "./project-tool";
-import { sampleProps } from "./project-tool.sample";
+import ProjectTool from "./project-tool-group";
+import { sampleProps } from "./project-tool-group.sample";
 
 test("should display the name", () => {
   render(<ProjectTool {...sampleProps} />);

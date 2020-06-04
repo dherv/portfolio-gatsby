@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectTool from "./project-tool";
-import { sampleProps } from "./project-tool.sample";
+import ProjectTool from "./project-tool-group";
+import { sampleProps } from "./project-tool-group.sample";
 
 export default {
   title: "ProjectTool",
