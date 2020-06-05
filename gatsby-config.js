@@ -10,14 +10,14 @@ module.exports = {
     title: `Portfolio`,
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src/data`,
       },
     },
-
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
     {
