@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  /* remove last tool-group margin-bottom */
+  margin-bottom: -16px;
+}
+
+.element {
+  width: 50%;
+}
+
+.wrapper {
+  composes: element;
+  padding: 0 8vw;
+}
