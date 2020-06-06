@@ -2,7 +2,12 @@
   --text-color: #484848;
   --text-color-dark: #212121;
   --border-color: #d2d2d2;
+  --padding: 2rem;
   --padding-container: 1.5rem 2rem;
+  --padding-horizontal: 0 2rem;
+  --padding-vertical: 1rem 0;
+  --dark-background-color: #484848;
+  --dark-text-color: #fff;
 }
 
 html {

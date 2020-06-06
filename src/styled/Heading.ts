@@ -9,12 +9,12 @@ export const HeadingDark = styled(Heading)`
 `;
 
 export const AppHeading = styled.h5<{ width: number }>`
-  width: ${(props) => props.width}px;
+  max-width: ${(props) => props.width && props.width}px;
   height: 1rem;
   line-height: 1rem;
   padding: 0 1rem;
-  background-color: #484848;
-  color: #fff;
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
   font-weight: 500;
   font-size: 0.5rem;
   text-align: center;
