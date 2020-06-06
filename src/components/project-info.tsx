@@ -12,7 +12,7 @@ const ProjectInfo: FC<Props> = ({ title, description, tools }) => {
         <ProjecTitle title={title} />
       </div>
       <div className={styles.element}>
-        <ProjectDescription text={description} />
+        <ProjectDescription description={description} />
       </div>
       <ProjectTools tools={tools} />
     </>

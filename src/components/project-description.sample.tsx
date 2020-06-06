@@ -1,3 +1,3 @@
 export const sampleProps = {
-  text: "Some project description",
+  description: "Some project description",
 };

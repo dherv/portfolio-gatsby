@@ -5,5 +5,5 @@ import { sampleProps } from "./project-description.sample";
 
 test("should display the description text", () => {
   render(<ProjectDescription {...sampleProps} />);
-  expect(screen.getByText(sampleProps.text)).toBeInTheDocument();
+  expect(screen.getByText("Some project description")).toBeInTheDocument();
 });

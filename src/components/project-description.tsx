@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-const ProjectDescription: FC<Props> = ({ text }) => {
-  return <p>{text}</p>;
+const ProjectDescription: FC<Props> = ({ description }) => {
+  return <p>{description}</p>;
 };
 
 interface Props {
-  text: string;
+  description: string;
 }
 
 export default ProjectDescription;
