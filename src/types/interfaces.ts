@@ -16,3 +16,8 @@ export interface ITool {
   testing: string[];
   devops: string[];
 }
+
+export interface IAboutData {
+  title: string;
+  items: string[];
+}
