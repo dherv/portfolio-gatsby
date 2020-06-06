@@ -9,7 +9,7 @@ export const HeadingDark = styled(Heading)`
 `;
 
 export const AppHeading = styled.h5<{ width: number }>`
-  max-width: ${(props) => props.width && props.width}px;
+  width: ${(props) => props.width && props.width}px;
   height: 1rem;
   line-height: 1rem;
   padding: 0 1rem;
