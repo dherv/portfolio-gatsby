@@ -13,7 +13,7 @@ export interface IProjectSelect {
 export interface ITool {
   frontend: string[];
   backend: string[];
-  testing: string[];
+  testing?: string[];
   devops: string[];
 }
 
