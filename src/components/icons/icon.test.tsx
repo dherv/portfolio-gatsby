@@ -22,3 +22,14 @@ test("should display a vue icon", () => {
   expect(screen.getByTitle("Vue")).toBeInTheDocument();
   expect(asFragment()).toMatchSnapshot();
 });
+test("should display a github icon", () => {
+  const { asFragment } = render(<Icon name="Github" />);
+  expect(screen.getByTitle("Github")).toBeInTheDocument();
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test("should display a linkedin icon", () => {
+  const { asFragment } = render(<Icon name="Linkedin" />);
+  expect(screen.getByTitle("Linkedin")).toBeInTheDocument();
+  expect(asFragment()).toMatchSnapshot();
+});
