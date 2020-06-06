@@ -12,3 +12,8 @@ test("should display each tool name", () => {
   render(<ProjectTool {...sampleProps} />);
   expect(screen.getByText("node, express, mysql")).toBeInTheDocument();
 });
+
+test("should display the app heading styled component correctly", () => {
+  const { asFragment } = render(<ProjectTool {...sampleProps} />);
+  expect(asFragment()).toMatchSnapshot();
+});
