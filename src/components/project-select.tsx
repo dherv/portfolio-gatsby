@@ -1,12 +1,12 @@
 import React, { FC } from "react";
-import ProjectListItem from "./project-select-item";
+import ProjectSelectItem from "./project-select-item";
 import { IProjectSelect } from "../types/interfaces";
 
-const ProjectList: FC<Props> = ({ projects }) => {
+const ProjectSelect: FC<Props> = ({ projects }) => {
   return (
     <ul>
       {projects.map((project) => (
-        <li key={project.id}>{<ProjectListItem {...project} />}</li>
+        <li key={project.id}>{<ProjectSelectItem {...project} />}</li>
       ))}
     </ul>
   );
@@ -15,4 +15,4 @@ const ProjectList: FC<Props> = ({ projects }) => {
 interface Props {
   projects: IProjectSelect[];
 }
-export default ProjectList;
+export default ProjectSelect;

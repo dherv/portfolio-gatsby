@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./project-select-item.module.css";
 
-const ProjectListItem: FC<Props> = ({ title, frontend, backend }) => {
+const ProjectSelectItem: FC<Props> = ({ title, frontend, backend }) => {
   return (
     <div className={styles.container}>
       <h5>{title}</h5>
@@ -19,4 +19,4 @@ interface Props {
   backend: { name: string; component: JSX.Element };
 }
 
-export default ProjectListItem;
+export default ProjectSelectItem;

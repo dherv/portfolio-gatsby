@@ -1,11 +1,11 @@
 import React from "react";
-import ProjectList from "./project-select";
+import ProjectSelect from "./project-select";
 import { sampleProps } from "./project-select.sample";
 
 export default {
-  title: "ProjectList",
-  component: "ProjectList",
+  title: "ProjectSelect",
+  component: "ProjectSelect",
   excludeStories: /.*Data/,
 };
 
-export const Default = () => <ProjectList {...sampleProps}></ProjectList>;
+export const Default = () => <ProjectSelect {...sampleProps}></ProjectSelect>;
