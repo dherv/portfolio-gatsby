@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import styles from "./project.module.css";
+import * as styles from "./project.module.css";
 import { ITool } from "../types/interfaces";
 import ProjectInfo from "./project-info";
 import Img from "gatsby-image";
@@ -34,7 +34,6 @@ const Project: FC<Props> = ({ title, description, tools }) => {
 
 interface Props {
   title: string;
-  imageUrl: string;
   description: string;
   tools: ITool;
 }

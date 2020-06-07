@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { HeadingDark } from "../styled/Heading";
-import styles from "./job-title.module.css";
+import * as styles from "./job-title.module.css";
 
 const JobTitle: FC<Props> = ({ title }) => {
   return (

@@ -3,7 +3,7 @@ import { ITool } from "../types/interfaces";
 import ProjecTitle from "./project-title";
 import ProjectDescription from "./project-description";
 import ProjectTools from "./project-tool-groups";
-import styles from "./project-info.module.css";
+import * as styles from "./project-info.module.css";
 
 const ProjectInfo: FC<Props> = ({ title, description, tools }) => {
   return (

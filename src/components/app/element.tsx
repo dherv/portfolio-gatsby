@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { AppHeading } from "../../styled/Heading";
-import styles from "./element.module.css";
+import * as styles from "./element.module.css";
 
 const Element: FC<Props> = ({ title, children }) => {
   return (

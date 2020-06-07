@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderTitle from "./header-title";
 import Nav from "./nav";
-import styles from "./header.module.css";
+import * as styles from "./header.module.css";
 import { INavLink } from "../types/interfaces";
 
 const Header = ({ title, links }) => {

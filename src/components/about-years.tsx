@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Heading } from "../styled/Heading";
 import Element from "./app/element";
-import styles from "./about-years.module.css";
+import * as styles from "./about-years.module.css";
 
 const AboutYears: FC<Props> = ({ count }) => {
   const title = "Code professionally for";

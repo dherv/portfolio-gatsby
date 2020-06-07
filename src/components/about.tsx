@@ -5,7 +5,7 @@ import Element from "./app/element";
 import ElementTextContent from "./app/element-text-content";
 import AboutYears from "./about-years";
 import { Styled } from "./about.styled";
-import styles from "./about.module.css";
+import * as styles from "./about.module.css";
 
 const About: FC<Props> = ({ data }) => {
   return (
