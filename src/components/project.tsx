@@ -8,7 +8,7 @@ import Img from "gatsby-image";
 const Project: FC<Props> = ({ title, description, tools }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "images/screenshot-watchers.jpg" }) {
+      file(relativePath: { eq: "data/images/screenshot-watchers.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_noBase64
