@@ -1,8 +1,6 @@
 .container {
   display: flex;
   align-items: center;
-  /* remove last tool-group margin-bottom */
-  margin-bottom: -16px;
 }
 
 .element {
@@ -11,5 +9,5 @@
 
 .wrapper {
   composes: element;
-  padding: 0 8vw;
+  padding: 0 10%;
 }

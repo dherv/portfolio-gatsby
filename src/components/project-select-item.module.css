@@ -1,9 +1,17 @@
 .container {
+}
+.container:hover {
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+.inner_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
-  padding: 0.5rem 0;
+  margin: 0 auto;
+  max-width: var(--container-width);
+  height: 64px;
 }
 
 .wrapper {
@@ -13,5 +21,6 @@
 }
 
 .element {
+  display: flex;
   margin-left: 2rem;
 }

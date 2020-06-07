@@ -13,7 +13,7 @@ const ProjectWork: FC<Props> = ({
   tools,
 }) => {
   return (
-    <>
+    <div>
       <div className={styles.container}>
         <div className={styles.title}>
           <ProjectTitle title={title}></ProjectTitle>
@@ -24,7 +24,7 @@ const ProjectWork: FC<Props> = ({
       <div className={styles.description}>
         <ProjectDescription description={description} />
       </div>
-    </>
+    </div>
   );
 };
 
