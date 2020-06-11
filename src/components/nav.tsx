@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import NavLink from "./nav-link";
 import { INavLink } from "../types/interfaces";
-import * as styles from "./nav.module.css";
+import styles from "./nav.module.css";
 
 const Nav: FC<Props> = ({ links }) => {
   return (

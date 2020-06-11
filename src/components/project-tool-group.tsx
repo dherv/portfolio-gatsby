@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { AppHeading } from "../styled/Heading";
-import * as styles from "./project-tool-group.module.css";
+import styles from "./project-tool-group.module.css";
 
 const ProjectTool: FC<Props> = ({ group, names }) => {
   return (

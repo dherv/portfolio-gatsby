@@ -3,7 +3,7 @@ import ProjectTitle from "./project-title";
 import ProjectDescription from "./project-description";
 import DateRange from "./app/date-range";
 import ProjectTools from "./project-tool-groups";
-import * as styles from "./project-work.module.css";
+import styles from "./project-work.module.css";
 import { ITool } from "../types/interfaces";
 
 const ProjectWork: FC<Props> = ({

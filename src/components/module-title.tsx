@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Heading } from "../styled/Heading";
-import * as styles from "./module-title.module.css";
+import styles from "./module-title.module.css";
 
 const ModuleTitle: FC<Props> = ({ title }) => {
   return (

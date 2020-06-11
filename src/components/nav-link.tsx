@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import * as styles from "./nav-link.module.css";
+import styles from "./nav-link.module.css";
 
 const NavLink: FC<Props> = ({ name, href }) => {
   return (
