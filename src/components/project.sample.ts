@@ -1,8 +1,7 @@
 export const sampleProps = {
   title: "some project",
   description: "description",
-  imageUrl: "../images/screenshot-watchers.jpg",
-
+  image: "screenshot-watchers.jpg",
   tools: {
     backend: ["node", "express", "mysql"],
     frontend: ["react"],

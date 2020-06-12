@@ -1,29 +1,47 @@
 import React, { FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import * as styles from "./project.module.css";
+import styles from "./project.module.css";
 import { ITool } from "../types/interfaces";
 import ProjectInfo from "./project-info";
 import Img from "gatsby-image";
 
-const Project: FC<Props> = ({ title, description, tools }) => {
+const Project: FC<Props> = ({ title, image, tools, description }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "data/images/screenshot-watchers.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_noBase64
+      allFile(
+        filter: {
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          relativeDirectory: { eq: "data/images" }
+        }
+      ) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
     }
   `);
+
   return (
     <div className={styles.container}>
       <div className={styles.element}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="project website screenshot"
-        />
+        {data.allFile.edges
+          .filter((img) => img.node.base === image)
+          .map((img) => {
+            return (
+              <Img
+                key={img.node.base}
+                fluid={img.node.childImageSharp.fluid}
+                // alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+              />
+            );
+          })}
       </div>
       <div className={styles.wrapper}>
         <ProjectInfo title={title} description={description} tools={tools} />
@@ -34,6 +52,7 @@ const Project: FC<Props> = ({ title, description, tools }) => {
 
 interface Props {
   title: string;
+  image: string;
   description: string;
   tools: ITool;
 }

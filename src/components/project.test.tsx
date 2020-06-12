@@ -9,22 +9,42 @@ jest.mock("gatsby", () => {
     ...gatsby,
     graphql: jest.fn(),
     useStaticQuery: jest.fn().mockImplementation(() => ({
-      file: {
-        childImageSharp: {
-          fluid: {
-            aspectRatio: 1,
-            src: "",
-            srcSet: "",
-            sizes: "",
+      allFile: {
+        edges: [
+          {
+            node: {
+              base: "screenshot-watchers.jpg",
+              childImageSharp: {
+                fluid: {
+                  aspectRatio: 1,
+                  src: "",
+                  srcSet: "",
+                  sizes: "",
+                },
+              },
+            },
           },
-        },
+          {
+            node: {
+              childImageSharp: {
+                fluid: {
+                  aspectRatio: 1,
+                  src: "",
+                  srcSet: "",
+                  sizes: "",
+                },
+              },
+            },
+          },
+        ],
       },
     })),
   };
 });
 
-test("should display an image", () => {
+test("should display only one image", () => {
   render(<Project {...sampleProps} />);
+  // getByRole will throw an error if multiple image in the document
   expect(screen.getByRole("img")).toBeInTheDocument();
 });
 
