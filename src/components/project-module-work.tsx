@@ -6,7 +6,7 @@ import ProjectModuleLayout from "./project-module-layout";
 import { IProjectSelect, IGraphProjectNode } from "../types/interfaces";
 import ProjectSelect from "./project-select";
 
-const ProjectModuleWork: FC<Props> = ({ projectSelect, node, selected }) => {
+const ProjectModuleWork: FC<Props> = ({ projectSelect, node, onClick }) => {
   const project = node && (
     <ProjectWork
       key={node.id}
@@ -24,7 +24,7 @@ const ProjectModuleWork: FC<Props> = ({ projectSelect, node, selected }) => {
     <ProjectModuleLayout
       title="Project which take all my free time"
       project={project}
-      select={<ProjectSelect projects={projectSelect} />}
+      select={<ProjectSelect projects={projectSelect} onClick={onClick} />}
     ></ProjectModuleLayout>
   );
 };
@@ -33,6 +33,7 @@ interface Props {
   projectSelect: IProjectSelect[];
   node: IGraphProjectNode;
   selected: string;
+  onClick: () => void;
 }
 
 export default withSelection(ProjectModuleWork, () =>

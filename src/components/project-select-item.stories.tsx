@@ -1,13 +1,24 @@
 import React from "react";
 import ProjectSelectItem from "./project-select-item";
-import { sampleProps } from "./project-select-item.sample";
+import { action } from "@storybook/addon-actions";
 
 export default {
   title: "ProjectSelectItem",
   component: "ProjectSelectItem",
   excludeStories: /.*Data/,
 };
+export const projectSelectItemData = {
+  title: "watchers",
+  frontendMain: "React",
+  backendMain: "Node",
+};
+export const projectSelectItemActionsData = {
+  onClick: action("onClick"),
+};
 
 export const Default = () => (
-  <ProjectSelectItem {...sampleProps}></ProjectSelectItem>
+  <ProjectSelectItem
+    {...projectSelectItemData}
+    {...projectSelectItemActionsData}
+  ></ProjectSelectItem>
 );

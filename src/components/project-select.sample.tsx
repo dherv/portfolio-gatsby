@@ -9,4 +9,5 @@ export const sampleProps = {
     { id: 3, ...projectSelectItemSampleProps },
     { id: 4, ...projectSelectItemSampleProps },
   ],
+  onClick: jest.fn(),
 };

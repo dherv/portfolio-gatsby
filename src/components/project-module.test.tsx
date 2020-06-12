@@ -1,5 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  queryAllByAltText,
+} from "@testing-library/react";
 import ProjectModule from "./project-module";
 import { sampleProps, sampleQuery } from "./project-module.sample";
 
@@ -60,6 +66,25 @@ jest.mock("gatsby", () => {
               excerpt: "description",
             },
           },
+          {
+            node: {
+              id: 2,
+              frontmatter: {
+                title: "skilldo",
+                image: "image",
+                type: "type",
+                frontendMain: "React",
+                backendMain: "Node",
+                tools: {
+                  backend: ["backend", "backend"],
+                  devops: ["devops", "devops"],
+                  frontend: ["frontend", "frontend"],
+                  testing: ["frontend", "frontend"],
+                },
+              },
+              excerpt: "description",
+            },
+          },
         ],
       },
     })),
@@ -75,7 +100,7 @@ test("should display a project module title", () => {
 
 test("should display a project select icon", () => {
   render(<ProjectModule />);
-  expect(screen.getByTitle("React")).toBeInTheDocument();
+  expect(screen.queryAllByText("React")).toHaveLength(2);
 });
 
 test("should display a project title", () => {
@@ -91,4 +116,11 @@ test("should display a list of tools", () => {
 test("should display a project description", () => {
   render(<ProjectModule />);
   expect(screen.getByText("description")).toBeInTheDocument();
+});
+
+test("should switch project when clicking a project select item", async () => {
+  render(<ProjectModule />);
+  fireEvent.click(screen.queryAllByText("watchers")[0]);
+  await waitFor(() => screen.getByText("skilldo"));
+  expect(screen.queryAllByText("skilldo")).toHaveLength(1);
 });
