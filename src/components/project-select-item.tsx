@@ -1,14 +1,19 @@
 import React, { FC } from "react";
-import * as styles from "./project-select-item.module.css";
+import styles from "./project-select-item.module.css";
+import Icon from "./icons/icon";
 
-const ProjectSelectItem: FC<Props> = ({ title, frontend, backend }) => {
+const ProjectSelectItem: FC<Props> = ({ title, frontendMain, backendMain }) => {
+  const components = {
+    frontend: <Icon name={frontendMain} />,
+    backend: <Icon name={backendMain} />,
+  };
   return (
     <div className={styles.container}>
       <div className={styles.inner_container}>
         <h5>{title}</h5>
         <div className={styles.wrapper}>
-          <div className={styles.element}>{frontend.component}</div>
-          <div className={styles.element}>{backend.component}</div>
+          <div className={styles.element}>{components.frontend}</div>
+          <div className={styles.element}>{components.backend}</div>
         </div>
       </div>
     </div>
@@ -17,8 +22,8 @@ const ProjectSelectItem: FC<Props> = ({ title, frontend, backend }) => {
 
 interface Props {
   title: string;
-  frontend: { name: string; component: JSX.Element };
-  backend: { name: string; component: JSX.Element };
+  frontendMain: string;
+  backendMain: string;
 }
 
 export default ProjectSelectItem;

@@ -10,10 +10,10 @@ test("should display a title", () => {
 
 test("should display an icon for the frontend framework", () => {
   render(<ProjectSelectItem {...sampleProps} />);
-  expect(screen.getByTitle(sampleProps.frontend.name)).toBeInTheDocument();
+  expect(screen.getByTitle(sampleProps.frontendMain)).toBeInTheDocument();
 });
 
 test("should display an icon for the backend framework", () => {
   render(<ProjectSelectItem {...sampleProps} />);
-  expect(screen.getByTitle(sampleProps.backend.name)).toBeInTheDocument();
+  expect(screen.getByTitle(sampleProps.backendMain)).toBeInTheDocument();
 });
