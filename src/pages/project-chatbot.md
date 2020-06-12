@@ -14,3 +14,5 @@ tools:
 ---
 
 A chatbot that can be easily integrated into any website. It will display a form, customized by an admin on the management website. The form information is stored and then available to the admin.
+
+<!-- end -->

@@ -14,3 +14,5 @@ tools:
 ---
 
 An application to write daily notes in any chosen language
+
+<!-- end -->
