@@ -4,6 +4,7 @@
   justify-content: space-around;
   padding: 4rem;
   background-color: var(--background-color);
+  min-height: 450px;
 }
 
 .list {
