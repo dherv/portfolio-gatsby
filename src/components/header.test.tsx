@@ -2,6 +2,21 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Header from "./header";
 
+jest.mock("gatsby", () => {
+  const gatsby = jest.requireActual("gatsby");
+  return {
+    ...gatsby,
+    graphql: jest.fn(),
+    useStaticQuery: jest.fn().mockImplementation(() => ({
+      site: {
+        siteMetadata: {
+          title: "title",
+        },
+      },
+    })),
+  };
+});
+
 const props = {
   title: "title",
   links: [
