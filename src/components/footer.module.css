@@ -6,6 +6,6 @@
   border-top: 1px solid var(--border-color);
 }
 
-.footer > svg {
+.footer > a {
   margin: 0 2rem;
 }

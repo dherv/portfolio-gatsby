@@ -5,8 +5,12 @@ import styles from "./footer.module.css";
 const Footer: FC<Props> = () => {
   return (
     <footer className={styles.footer}>
-      <Icon name="Github"></Icon>
-      <Icon name="Linkedin"></Icon>
+      <a href={process.env.GATSBY_GITHUB_LINK} target="blank">
+        <Icon name="Github"></Icon>
+      </a>
+      <a href={process.env.GATSBY_LINKEDIN_LINK} target="blank">
+        <Icon name="Linkedin"></Icon>
+      </a>
     </footer>
   );
 };
