@@ -36,9 +36,10 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
           .map((img) => {
             return (
               <Img
+                className={styles.image}
+                loading="eager"
                 key={img.node.base}
                 fluid={img.node.childImageSharp.fluid}
-                // alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
               />
             );
           })}

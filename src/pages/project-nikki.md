@@ -1,7 +1,7 @@
 ---
 title: "nikki"
 type: "personal"
-image: ""
+image: "screenshot-nikki.png"
 frontendMain: "React"
 backendMain: "Node"
 tools:

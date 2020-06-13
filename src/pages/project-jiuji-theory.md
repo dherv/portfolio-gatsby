@@ -1,8 +1,8 @@
 ---
 title: "jiuji theory"
 type: "personal"
-image: ""
-frontendMain: "React"
+image: "screenshot-jiuji-theory.png"
+frontendMain: "Next"
 backendMain: "Node"
 tools:
   {
