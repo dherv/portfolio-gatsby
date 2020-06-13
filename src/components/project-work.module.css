@@ -8,9 +8,10 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 4rem;
+  min-width: 240px;
 }
 
 .description {
   padding: var(--padding-vertical);
-  min-height: 200px;
+  min-height: 250px;
 }

@@ -31,6 +31,9 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
   return (
     <div className={styles.container}>
       <div className={styles.element}>
+        <ProjectInfo title={title} description={description} tools={tools} />
+      </div>
+      <div className={styles.element}>
         {data.allFile.edges
           .filter((img) => img.node.base === image)
           .map((img) => {
@@ -43,9 +46,6 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
               />
             );
           })}
-      </div>
-      <div className={styles.wrapper}>
-        <ProjectInfo title={title} description={description} tools={tools} />
       </div>
     </div>
   );

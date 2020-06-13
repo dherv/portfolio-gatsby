@@ -1,15 +1,11 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .element {
   width: 50%;
-}
-
-.wrapper {
-  composes: element;
-  padding: 0 10%;
 }
 
 .image {

@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import { Title, Content, Module, Container } from "../styled/Module";
+import { Title, Content, Module, ContainerLarge } from "../styled/Module";
 import ModuleTitle from "./module-title";
-import ProjectSelect from "./project-select";
-import { IProjectSelect } from "../types/interfaces";
 
 const ProjectModuleLayout: FC<Props> = ({ title, select, project }) => (
   <Module as="section">
@@ -10,7 +8,7 @@ const ProjectModuleLayout: FC<Props> = ({ title, select, project }) => (
       <ModuleTitle title={title} />
     </Title>
     <Content space={2}>{select}</Content>
-    <Container>{project}</Container>
+    <ContainerLarge>{project}</ContainerLarge>
   </Module>
 );
 
