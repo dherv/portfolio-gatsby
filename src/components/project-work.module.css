@@ -12,4 +12,5 @@
 
 .description {
   padding: var(--padding-vertical);
+  min-height: 200px;
 }
