@@ -1,10 +1,9 @@
 import React, { FC } from "react";
 import { HeadingDark } from "../styled/Heading";
-import styles from "./job-title.module.css";
 
 const JobTitle: FC<Props> = ({ title }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <HeadingDark as="h2">{title}</HeadingDark>
     </div>
   );
