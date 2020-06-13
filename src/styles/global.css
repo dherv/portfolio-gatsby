@@ -15,4 +15,5 @@
 html {
   font-family: "Roboto", sans-serif;
   color: var(--text-color);
+  line-height: 1.5;
 }
