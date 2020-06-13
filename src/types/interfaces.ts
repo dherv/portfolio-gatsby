@@ -39,6 +39,7 @@ export interface ITool {
 export interface IAboutData {
   title: string;
   items: string[];
+  order: number;
 }
 
 export interface IGraphAboutNode {

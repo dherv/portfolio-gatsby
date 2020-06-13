@@ -12,6 +12,7 @@ import AboutYears from "./about-years";
 import { Styled } from "./about.styled";
 import styles from "./about.module.css";
 import { useStaticQuery, graphql } from "gatsby";
+import ModuleTitle from "./module-title";
 
 const About: FC<Props> = () => {
   const data: IGraphAllMarkdownRemark<IGraphAboutNode> = useStaticQuery(graphql`
@@ -22,6 +23,7 @@ const About: FC<Props> = () => {
             frontmatter {
               title
               items
+              order
             }
           }
         }
@@ -31,24 +33,33 @@ const About: FC<Props> = () => {
 
   return (
     <div className={styles.container}>
-      <AboutCountries />
-      <ul className={styles.list}>
-        {data.allMarkdownRemark.edges.map(({ node }, index) => {
-          const order = index > 0 ? index + 2 : 1;
-          return (
-            <Styled.Item as="li" key={node.frontmatter.title} order={order}>
-              <Element title={node.frontmatter.title}>
-                <ElementTextContent
-                  items={node.frontmatter.items}
-                ></ElementTextContent>
-              </Element>
-            </Styled.Item>
-          );
-        })}
-        <Styled.Item as="li" order={1}>
-          <AboutYears count={2} />
-        </Styled.Item>
-      </ul>
+      <div className={styles.title}>
+        <ModuleTitle title="A bit about me" />
+      </div>
+
+      <div className={styles.wrapper}>
+        <AboutCountries />
+        <ul className={styles.list}>
+          {data.allMarkdownRemark.edges.map(({ node }) => {
+            return (
+              <Styled.Item
+                as="li"
+                key={node.frontmatter.title}
+                order={node.frontmatter.order}
+              >
+                <Element title={node.frontmatter.title}>
+                  <ElementTextContent
+                    items={node.frontmatter.items}
+                  ></ElementTextContent>
+                </Element>
+              </Styled.Item>
+            );
+          })}
+          <Styled.Item as="li" order={2}>
+            <AboutYears count={2} />
+          </Styled.Item>
+        </ul>
+      </div>
     </div>
   );
 };

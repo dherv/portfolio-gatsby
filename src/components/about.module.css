@@ -1,10 +1,19 @@
 .container {
+  padding: var(--padding);
+  background-color: #e0f2f1;
+  min-height: 450px;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+}
+
+.wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 4rem;
-  background-color: var(--background-color);
-  min-height: 450px;
+}
+
+.title {
+  margin-bottom: 4rem;
 }
 
 .list {
