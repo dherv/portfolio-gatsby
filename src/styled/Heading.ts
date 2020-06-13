@@ -8,6 +8,12 @@ export const HeadingDark = styled(Heading)`
   color: var(--text-color-dark);
 `;
 
+export const HeadingLight = styled.h1`
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+`;
+
 export const AppHeading = styled.h5<{ width: number }>`
   width: ${(props) => props.width && props.width}px;
   height: 1rem;

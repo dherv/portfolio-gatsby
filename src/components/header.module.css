@@ -1,7 +1,10 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: var(--padding);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--padding);
+  background: #e0f2f1;
   border-bottom: 1px solid var(--border-color);
+  font-size: 2rem;
 }

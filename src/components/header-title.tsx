@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { Heading } from "../styled/Heading";
+import { HeadingLight } from "../styled/Heading";
 
 const HeaderTitle: FC<Props> = ({ title }) => {
-  return <Heading as="h1">{title}</Heading>;
+  return <HeadingLight as="h1">{title}</HeadingLight>;
 };
 
 interface Props {
