@@ -36,7 +36,13 @@ interface Props {
 export default withSelection(ProjectModule, () =>
   useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "personal" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "personal" } } }
+        sort: {
+          fields: [frontmatter___backendMain, frontmatter___title]
+          order: [DESC, DESC]
+        }
+      ) {
         ...ProjectEdgeFragment
       }
     }

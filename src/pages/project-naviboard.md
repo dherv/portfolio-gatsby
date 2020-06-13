@@ -3,8 +3,8 @@ title: "naviboard"
 type: "work"
 frontendMain: "Vue"
 backendMain: "Laravel"
-date_start: "August 2019"
-date_end: "August 2019"
+date_start: "2019-08-01"
+date_end: null
 tools:
   {
     frontend: ["React", "Swift", "Vue", "NextJS", "Bootstrap"],

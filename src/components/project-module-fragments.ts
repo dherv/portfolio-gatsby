@@ -32,8 +32,8 @@ export const ProjectWorkEdgeFragment = graphql`
         frontmatter {
           title
           type
-          date_start
-          date_end
+          date_start(formatString: "MMMM, YYYY")
+          date_end(formatString: "MMMM, YYYY")
           frontendMain
           backendMain
           tools {

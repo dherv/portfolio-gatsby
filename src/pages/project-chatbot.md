@@ -3,8 +3,8 @@ title: "chatbot"
 type: "work"
 frontendMain: "React"
 backendMain: "Django"
-date_start: "May 2019"
-date_end: "July 2019"
+date_start: "2019-05-01"
+date_end: "2019-07-01"
 tools:
   {
     frontend: ["React", "Typescript", "GatsbyJS"],

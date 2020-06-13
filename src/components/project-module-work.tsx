@@ -39,7 +39,10 @@ interface Props {
 export default withSelection(ProjectModuleWork, () =>
   useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "work" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "work" } } }
+        sort: { fields: [frontmatter___date_end], order: DESC }
+      ) {
         ...ProjectWorkEdgeFragment
       }
     }

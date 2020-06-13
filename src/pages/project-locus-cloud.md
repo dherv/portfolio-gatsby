@@ -3,8 +3,8 @@ title: "locus cloud"
 type: "work"
 frontendMain: "Vue"
 backendMain: "Laravel"
-date_start: "Jan 2019"
-date_end: "April 2019"
+date_start: "2019-01-01"
+date_end: "2020-04-01"
 tools:
   {
     frontend: ["Vue", "Bootstrap"],

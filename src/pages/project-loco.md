@@ -3,8 +3,8 @@ title: "loco"
 type: "work"
 frontendMain: "Vue"
 backendMain: "Laravel"
-date_start: "April 2019"
-date_end: "July 2019"
+date_start: "2019-04-01"
+date_end: "2020-05-01"
 tools:
   {
     frontend: ["Vue", "Vuetify"],
