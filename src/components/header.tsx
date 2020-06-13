@@ -1,12 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import HeaderTitle from "./header-title";
-import Nav from "./nav";
 import styles from "./header.module.css";
-import { INavLink } from "../types/interfaces";
 import { useStaticQuery, graphql } from "gatsby";
 import JobTitle from "./job-title";
 
-const Header = () => {
+const Header: FC<Props> = () => {
   const data = useStaticQuery(graphql`
     query {
       site {

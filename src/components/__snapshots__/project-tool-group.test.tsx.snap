@@ -6,7 +6,7 @@ exports[`should display the app heading styled component correctly 1`] = `
     class="container"
   >
     <h5
-      class="sc-AxiKw hBIXZs"
+      class="sc-AxhCb PewcA"
       width="80"
     >
       backend

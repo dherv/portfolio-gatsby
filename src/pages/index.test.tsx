@@ -55,10 +55,6 @@ jest.mock("gatsby", () => {
   };
 });
 
-test("should display a nav", () => {
-  render(<Home />);
-  expect(screen.getByRole("navigation")).toBeInTheDocument();
-});
 test("should display a job title", () => {
   render(<Home />);
   expect(screen.getByText("Fullstack Developer")).toBeInTheDocument();
