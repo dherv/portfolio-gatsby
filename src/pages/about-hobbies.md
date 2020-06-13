@@ -1,4 +1,5 @@
 ---
 title: "usually spend my free time"
-items: ["code", "jiujitsu"]
+items: ["Code", "Jiujitsu", "Music", "Movies", "Books"]
+order: 1
 ---

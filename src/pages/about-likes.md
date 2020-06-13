@@ -1,4 +1,13 @@
 ---
 title: "what I like now"
-items: ["coffee"]
+order: 4
+items:
+  [
+    "Coffee",
+    "Cool weather",
+    "Rock and Chill music",
+    "Sci-fi and Viking series",
+    "Strategy games",
+    "Asahi beer",
+  ]
 ---
