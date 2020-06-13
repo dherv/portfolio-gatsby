@@ -87,7 +87,7 @@ jest.mock("gatsby", () => {
 test("should display a project module title", () => {
   render(<ProjectModuleWork />);
   expect(
-    screen.queryByText("Project which take all my free time")
+    screen.queryByText("Project I built with the team at work")
   ).toBeInTheDocument();
 });
 
