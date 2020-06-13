@@ -41,8 +41,18 @@ export interface IAboutData {
   items: string[];
 }
 
-export interface IGraphProjectEdge {
-  node: IGraphProjectNode;
+export interface IGraphAboutNode {
+  frontmatter: IAboutData;
+}
+
+export interface IGraphEdge<Node> {
+  node: Node;
+}
+
+export interface IGraphAllMarkdownRemark<Node> {
+  allMarkdownRemark: {
+    edges: IGraphEdge<Node>[];
+  };
 }
 
 export interface IGraphProjectNode {

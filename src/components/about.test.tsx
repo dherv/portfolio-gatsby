@@ -3,6 +3,29 @@ import { render, screen } from "@testing-library/react";
 import About from "./about";
 import { sampleProps } from "./about.sample";
 
+jest.mock("gatsby", () => {
+  const gatsby = jest.requireActual("gatsby");
+  return {
+    ...gatsby,
+    graphql: jest.fn(),
+    useStaticQuery: jest.fn().mockImplementation(() => ({
+      allMarkdownRemark: {
+        edges: [
+          {
+            node: {
+              id: 1,
+              frontmatter: {
+                title: "stack",
+                items: ["javascript"],
+              },
+            },
+          },
+        ],
+      },
+    })),
+  };
+});
+
 test("should display a country", () => {
   render(<About {...sampleProps} />);
   expect(screen.getByText("Where I lived")).toBeInTheDocument();
@@ -15,23 +38,8 @@ test("should display a year", () => {
   expect(screen.getByText("2yrs")).toBeInTheDocument();
 });
 
-test("should display free time list element with text content", () => {
+test("should display one data list element with text content", () => {
   render(<About {...sampleProps} />);
-  expect(screen.getByText("usually spend my free time")).toBeInTheDocument();
-  expect(screen.getByText("code")).toBeInTheDocument();
-});
-test("should display like list element with text content", () => {
-  render(<About {...sampleProps} />);
-  expect(screen.getByText("what I like now")).toBeInTheDocument();
-  expect(screen.getByText("code")).toBeInTheDocument();
-});
-test("should display wish to learn element with text content", () => {
-  render(<About {...sampleProps} />);
-  expect(screen.getByText("what I would like to learn")).toBeInTheDocument();
-  expect(screen.getByText("surf")).toBeInTheDocument();
-});
-test("should display favorit stack element with text content", () => {
-  render(<About {...sampleProps} />);
-  expect(screen.getByText("favorite stack")).toBeInTheDocument();
+  expect(screen.getByText("stack")).toBeInTheDocument();
   expect(screen.getByText("javascript")).toBeInTheDocument();
 });

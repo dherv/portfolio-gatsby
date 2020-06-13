@@ -10,27 +10,6 @@ import ProjectModuleWork from "../components/project-module-work";
 import { Title, Module, Content } from "../styled/Module";
 
 export default function Home() {
-  const about = {
-    data: [
-      {
-        title: "usually spend my free time",
-        items: ["code", "jiujitsu"],
-      },
-      {
-        title: "favorite stack",
-        items: ["javascript"],
-      },
-      {
-        title: "what I like now",
-        items: ["coffee"],
-      },
-      {
-        title: "what I would like to learn",
-        items: ["surf"],
-      },
-    ],
-  };
-
   return (
     <div>
       <Header
@@ -52,7 +31,7 @@ export default function Home() {
           <ModuleTitle title="A bit about me" />
         </Title>
         <Content space={2}>
-          <About data={about.data}></About>
+          <About></About>
         </Content>
       </Module>
 
