@@ -15,7 +15,7 @@ const withSelection = (Component: React.ComponentType, query) => (props) => {
     ({ node }) => {
       const {
         id,
-        frontmatter: { title, frontendMain, backendMain },
+        frontmatter: { title, frontendMain, backendMain, mobileMain },
       } = node;
 
       return {
@@ -23,6 +23,7 @@ const withSelection = (Component: React.ComponentType, query) => (props) => {
         title,
         frontendMain,
         backendMain,
+        mobileMain,
       };
     }
   );

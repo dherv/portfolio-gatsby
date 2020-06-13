@@ -3,6 +3,7 @@ title: "naviboard"
 type: "work"
 frontendMain: "Vue"
 backendMain: "Laravel"
+mobileMain: "Swift"
 date_start: "2019-08-01"
 date_end: null
 tools:

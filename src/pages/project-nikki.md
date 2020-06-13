@@ -4,12 +4,14 @@ type: "personal"
 image: "screenshot-nikki.png"
 frontendMain: "React"
 backendMain: "Node"
+mobileMain: "PWA"
 tools:
   {
-    frontend: ["React", "PWA", "Material UI", "Firebase", "Firestore"],
-    backend: ["Node", "NestJS", "MySQL"],
+    frontend: ["React"],
+    backend: ["Node", "NestJS", "MySQL", "Firestore"],
     testing: ["Jest", "Testing Library"],
-    devops: ["Docker"],
+    devops: ["Docker", "Firebase"],
+    mobile: ["Progressive Web App"],
   }
 ---
 

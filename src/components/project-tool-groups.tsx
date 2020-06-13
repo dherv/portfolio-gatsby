@@ -6,11 +6,13 @@ import { ITool } from "../types/interfaces";
 const ProjectTools: FC<Props> = ({ tools }) => {
   return (
     <ul>
-      {Object.entries(tools).map(([group, names]) => (
-        <li className={styles.item} key={group}>
-          <ProjectTool group={group} names={names} />
-        </li>
-      ))}
+      {Object.entries(tools).map(([group, names]) =>
+        names ? (
+          <li className={styles.item} key={group}>
+            <ProjectTool group={group} names={names} />
+          </li>
+        ) : null
+      )}
     </ul>
   );
 };

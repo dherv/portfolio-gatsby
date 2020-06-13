@@ -11,11 +11,13 @@ export const ProjectEdgeFragment = graphql`
           type
           frontendMain
           backendMain
+          mobileMain
           tools {
             backend
             devops
             frontend
             testing
+            mobile
           }
         }
         excerpt
@@ -36,6 +38,7 @@ export const ProjectWorkEdgeFragment = graphql`
           date_end(formatString: "MMMM, YYYY")
           frontendMain
           backendMain
+          mobileMain
           tools {
             backend
             devops
