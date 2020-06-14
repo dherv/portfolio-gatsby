@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Icon from "./icon";
+import Icon from "./icon-generator";
 
 test("should display a node icon", () => {
   const { asFragment } = render(<Icon name="Node" />);

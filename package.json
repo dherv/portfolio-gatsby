@@ -12,6 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --watch",
+    "test:ci": "jest",
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s ./public",
     "build-storybook": "NODE_ENV=production build-storybook -s ./public"
   },
