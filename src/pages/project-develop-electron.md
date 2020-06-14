@@ -6,13 +6,12 @@ frontendMain: "WebComponents"
 backendMain: "Electron"
 tools:
   {
-    frontend: ["React", "Apollo", "Storybook"],
-    backend: ["Node", "GraphQL", "MongoDB"],
-    testing: ["Jest", "Testing Library", "Cypress"],
-    devops: ["Docker", "CircleCI", "AWS"],
+    frontend: ["Web Components", "Vanilla JS"],
+    backend: ["Node"],
+    testing: ["Jest", "Testing Library"],
   }
 ---
 
-A list for skills
+A desktop application to help me manage my applications folders
 
 <!-- end -->

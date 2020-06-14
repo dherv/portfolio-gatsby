@@ -6,13 +6,13 @@ frontendMain: "Gatsby"
 backendMain: "GraphQL"
 tools:
   {
-    frontend: ["React", "Apollo", "Storybook"],
-    backend: ["Node", "GraphQL", "MongoDB"],
-    testing: ["Jest", "Testing Library", "Cypress"],
-    devops: ["Docker", "CircleCI", "AWS"],
+    frontend: ["React", "GraphQL", "Storybook"],
+    backend: ["GraphQL"],
+    testing: ["Jest", "Testing Library"],
+    devops: ["CircleCI", "AWS"],
   }
 ---
 
-A list for skills
+This website!
 
 <!-- end -->

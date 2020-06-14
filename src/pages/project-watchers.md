@@ -6,13 +6,13 @@ frontendMain: "React"
 backendMain: "Node"
 tools:
   {
-    frontend: ["React", "Apollo", "Storybook"],
+    frontend: ["React", "Apollo"],
     backend: ["Node", "GraphQL", "MongoDB"],
-    testing: ["Jest", "Testing Library", "Cypress"],
-    devops: ["Docker", "CircleCI", "AWS"],
+    testing: ["Jest", "Testing Library"],
+    devops: ["Docker", "AWS"],
   }
 ---
 
-A movie website
+A movie website to show which movies are online now
 
 <!-- end -->

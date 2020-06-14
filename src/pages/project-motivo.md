@@ -13,6 +13,6 @@ tools:
   }
 ---
 
-Motivo CRM is a recruiting system application, composed of three websites: candidate, recruiter, company. The candidate can create multiple profiles, connect with recruiters, look at the job offers, apply to one, manage tasks within a kanban board (like Trello), respond to invitations, and also create events on a calendar, chat with people and send emails. Recruiters and companies have access to the same technology with some personalized features.
+Motivo CRM is a recruiting system application, composed of three websites: candidate, recruiter, company. As a candidate you can create multiple profiles, connect with recruiters, look at job offers, apply to one, manage your tasks within a kanban board (like Trello), respond to invitations, and also create events on a calendar or chat with people and send emails. Recruiters and companies have access to the same technology with some personalized features.
 
 <!-- end -->

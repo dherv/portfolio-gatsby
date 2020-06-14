@@ -8,11 +8,11 @@ tools:
   {
     frontend: ["React", "NextJS", "YouTube API"],
     backend: ["Node", "NestJS", "MySQL"],
-    testing: ["Jest", "Testing Library", "Cypress"],
-    devops: ["Docker"],
+    testing: ["Jest", "Testing Library"],
+    devops: ["Docker", "AWS"],
   }
 ---
 
-An application which keeps track of learnt techniques
+An application which keeps track of the techniques I learnt with some additional media content
 
 <!-- end -->

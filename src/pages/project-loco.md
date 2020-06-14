@@ -13,6 +13,6 @@ tools:
   }
 ---
 
-Loco is an admin website where users can set up beacons and maps (the most common would be a shop's floor or a station map). They can then use the beacon technology inside their shops with their smartphone application.
+Loco is an admin website where you can set upload maps of your business and setup beacons (the most common would be a shop's floor or a station map). It is then possible to use the beacon technology inside each of those places with a smartphone application.
 
 <!-- end -->
