@@ -25,5 +25,13 @@ module.exports = {
         excerpt_separator: `<!-- end -->`,
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "portfolio.gastby",
+        protocol: "https",
+        hostname: "www.dherv.com",
+      },
+    },
   ],
 };
