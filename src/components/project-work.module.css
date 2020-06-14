@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .title {

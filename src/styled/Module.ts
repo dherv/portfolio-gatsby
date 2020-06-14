@@ -1,25 +1,28 @@
 import styled from "styled-components";
+import { device } from "./media-queries";
 
-export const Container = styled.div`
-  max-width: var(--container-width);
+export const Wrapper = styled.div`
+  max-width: 100%;
+  padding: 0 2rem;
   margin: 0 auto;
-`;
-
-export const ContainerLarge = styled(Container)`
-  max-width: 1160px;
-  margin: 6rem auto;
-`;
-
-export const Title = styled(Container)`
-  height: initial;
-`;
-
-export const Content = styled.div<{ space: number }>`
-  margin-top: ${(props) => props.space * 2}rem;
-  margin-bottom: ${(props) => props.space * 2}rem;
+  @media ${device.laptop} {
+    max-width: var(--container-width);
+  }
 `;
 
 export const Module = styled.section`
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 `;
+
+export const Title = styled(Wrapper)`
+  height: initial;
+`;
+
+// Tabs need a different styling to handle the hover event which takes the full width => no Wrapper
+export const Tabs = styled.div`
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+`;
+
+export const Panels = styled(Wrapper)``;

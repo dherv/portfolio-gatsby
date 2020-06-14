@@ -9,6 +9,7 @@
   font-weight: 500;
   margin: 0 auto;
   max-width: var(--container-width);
+  padding: 0 2rem;
   height: 64px;
 }
 

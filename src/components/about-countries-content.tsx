@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "./about.module.css";
 
 const AboutCountriesContent = () => {
   return (
     <svg
-      width="695"
-      height="267"
+      className={styles.countries}
       viewBox="0 0 695 267"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

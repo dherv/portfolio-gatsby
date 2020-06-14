@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Title, Content, Module, ContainerLarge } from "../styled/Module";
+import { Title, Tabs, Module, Panels } from "../styled/Module";
 import ModuleTitle from "./module-title";
 
 const ProjectModuleLayout: FC<Props> = ({ title, select, project }) => (
@@ -7,8 +7,8 @@ const ProjectModuleLayout: FC<Props> = ({ title, select, project }) => (
     <Title>
       <ModuleTitle title={title} />
     </Title>
-    <Content space={2}>{select}</Content>
-    <ContainerLarge>{project}</ContainerLarge>
+    <Tabs>{select}</Tabs>
+    <Panels>{project}</Panels>
   </Module>
 );
 

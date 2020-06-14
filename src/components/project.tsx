@@ -18,7 +18,7 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
           node {
             base
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 480) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -30,7 +30,7 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.element}>
+      <div className={styles.element_info}>
         <ProjectInfo title={title} description={description} tools={tools} />
       </div>
       <div className={styles.element}>

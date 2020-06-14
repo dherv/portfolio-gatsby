@@ -4,19 +4,19 @@ import About from "../components/about";
 import Footer from "../components/footer";
 import ProjectModule from "../components/project-module";
 import ProjectModuleWork from "../components/project-module-work";
-import { Title, Module, Content } from "../styled/Module";
+import { Module } from "../styled/Module";
+import { GlobalStyle } from "../styled/globals";
 
 export default function Home() {
   return (
     <div>
+      <GlobalStyle />
       <Header></Header>
 
       <ProjectModule />
 
       <Module as="section">
-        <Content space={2}>
-          <About></About>
-        </Content>
+        <About></About>
       </Module>
 
       <ProjectModuleWork />

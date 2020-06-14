@@ -9,7 +9,6 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .title {
@@ -18,6 +17,30 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: var(--padding);
+}
+
+.countries {
+  width: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 520px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: var(--padding);
+  }
+  .countries {
+    width: 500px;
+  }
 }
