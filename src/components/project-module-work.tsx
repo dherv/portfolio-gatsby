@@ -22,7 +22,7 @@ const ProjectModuleWork: FC<Props> = ({ projectSelect, node, onClick }) => {
 
   return (
     <ProjectModuleLayout
-      title="Project I built with the team at work"
+      title="Projects I build with the team at work"
       project={project}
       select={<ProjectSelect projects={projectSelect} onClick={onClick} />}
     ></ProjectModuleLayout>
