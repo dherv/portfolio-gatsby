@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./project-select-item.module.css";
-import Icon from "./icons/icon";
+import Icon from "./icons/icon-generator";
 
 const ProjectSelectItem: FC<Props> = ({
   title,
