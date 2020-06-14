@@ -3,7 +3,7 @@
 exports[`should display the app heading styled component correctly 1`] = `
 <DocumentFragment>
   <h5
-    class="sc-AxhUy iOxDUS"
+    class="sc-AxhUy bFjAMF"
     width="150"
   >
     Where I lived

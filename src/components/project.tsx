@@ -18,7 +18,7 @@ const Project: FC<Props> = ({ title, image, tools, description }) => {
           node {
             base
             childImageSharp {
-              fluid(maxWidth: 480) {
+              fluid(maxWidth: 520) {
                 ...GatsbyImageSharpFluid
               }
             }

@@ -22,7 +22,7 @@ export const Title = styled(Wrapper)`
 // Tabs need a different styling to handle the hover event which takes the full width => no Wrapper
 export const Tabs = styled.div`
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 `;
 
 export const Panels = styled(Wrapper)``;

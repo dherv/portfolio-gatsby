@@ -1,5 +1,5 @@
 .container {
-  padding: var(--padding);
+  padding: calc(var(--padding) * 2);
   background-color: #e0f2f1;
   min-height: 450px;
   border-top: 1px solid silver;
@@ -42,5 +42,11 @@
   }
   .countries {
     width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .countries {
+    width: 650px;
   }
 }

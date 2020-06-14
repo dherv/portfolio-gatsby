@@ -33,12 +33,14 @@ const About: FC<Props> = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <ModuleTitle title="A bit about me" />
-      </div>
-
       <div className={styles.wrapper}>
-        <AboutCountries />
+        <div>
+          <div className={styles.title}>
+            <ModuleTitle title="A bit about me" />
+          </div>
+          <AboutCountries />
+        </div>
+
         <ul className={styles.list}>
           {data.allMarkdownRemark.edges.map(({ node }) => {
             return (

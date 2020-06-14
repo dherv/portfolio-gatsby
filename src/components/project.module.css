@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -10,8 +10,9 @@
 }
 
 .element_info {
-  composes: element;
+  width: 50%;
   min-width: calc(300px - var(--padding) * 2);
+  max-width: 320px;
 }
 
 .image {

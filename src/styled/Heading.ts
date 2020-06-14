@@ -29,7 +29,7 @@ export const AppHeading = styled.h5<{ width: number }>`
   background-color: var(--dark-background-color);
   color: var(--dark-text-color);
   font-weight: 500;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   text-align: center;
   white-space: nowrap;
   flex: 0 0 ${(props) => (props.width ? props.width : 80)}px;
