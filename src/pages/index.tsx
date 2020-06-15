@@ -16,13 +16,19 @@ export default function Home() {
 
       <Header></Header>
 
-      <ProjectModule />
+      <ProjectModule
+        isHero={true}
+        title="Projects I build during my free time"
+      />
 
       <Module as="section">
         <About></About>
       </Module>
 
-      <ProjectModuleWork />
+      <ProjectModuleWork
+        isHero={false}
+        title="Projects I build with the team at work"
+      />
 
       <Footer></Footer>
     </div>

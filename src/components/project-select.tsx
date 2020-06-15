@@ -16,6 +16,6 @@ const ProjectSelect: FC<Props> = ({ projects, onClick }) => {
 
 interface Props {
   projects: IProjectSelect[];
-  onClick: () => void;
+  onClick: (title: string) => void;
 }
 export default ProjectSelect;

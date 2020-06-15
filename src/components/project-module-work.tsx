@@ -2,12 +2,10 @@ import React, { FC } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import withSelection from "./with-selection";
 import ProjectWork from "./project-work";
-import ProjectModuleLayout from "./project-module-layout";
-import { IProjectSelect, IGraphProjectNode } from "../types/interfaces";
-import ProjectSelect from "./project-select";
+import { IGraphProjectNode } from "../types/interfaces";
 
-const ProjectModuleWork: FC<Props> = ({ projectSelect, node, onClick }) => {
-  const project = node && (
+const ProjectModuleWork: FC<Props> = ({ node }) => {
+  return node ? (
     <ProjectWork
       key={node.id}
       date={{
@@ -18,22 +16,11 @@ const ProjectModuleWork: FC<Props> = ({ projectSelect, node, onClick }) => {
       tools={node.frontmatter.tools}
       description={node.excerpt}
     ></ProjectWork>
-  );
-
-  return (
-    <ProjectModuleLayout
-      title="Projects I build with the team at work"
-      project={project}
-      select={<ProjectSelect projects={projectSelect} onClick={onClick} />}
-    ></ProjectModuleLayout>
-  );
+  ) : null;
 };
 
 interface Props {
-  projectSelect: IProjectSelect[];
   node: IGraphProjectNode;
-  selected: string;
-  onClick: () => void;
 }
 
 export default withSelection(ProjectModuleWork, () =>
