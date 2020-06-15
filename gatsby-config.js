@@ -1,13 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
-    title: `Damien Hervieux`,
+    title: `damien hervieux`,
+    description: `damien hervieux online resume`,
+    author: `damien hervieux`,
+    lang: `en`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -33,5 +29,19 @@ module.exports = {
         hostname: "www.dherv.com",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Damien Hervieux`,
+        short_name: `damien`,
+        start_url: `/`,
+        background_color: `#e0f2f1`,
+        theme_color: `#e0f2f1`,
+        display: `standalone`,
+        icon: `static/android-chrome-512x512.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 };
