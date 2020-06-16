@@ -15,7 +15,7 @@
     "test:ci": "jest",
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s ./public",
     "build-storybook": "NODE_ENV=production build-storybook -s ./public",
-    "deploy": "npm run -n \"-r dotenv/config\" && npm run build && gatsby-plugin-s3 deploy"
+    "deploy": "npm run -n \"-r dotenv/config\" && npm run build && gatsby-plugin-s3 deploy -y"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
