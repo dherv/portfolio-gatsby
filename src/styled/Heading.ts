@@ -19,6 +19,7 @@ export const HeadingDate = styled(Heading)`
 export const HeadingLight = styled.h1`
   font-weight: 300;
   margin-bottom: 0.25rem;
+  text-transform: capitalize;
 `;
 
 export const AppHeading = styled.h5<{ width: number }>`

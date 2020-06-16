@@ -62,7 +62,7 @@ test("should display a job title", () => {
 test("should display a project module", () => {
   render(<Home />);
   expect(
-    screen.queryByText("Project which take all my free time")
+    screen.queryByText("Projects I build during my free time")
   ).toBeInTheDocument();
 });
 test("should display an about module", () => {
@@ -73,7 +73,7 @@ test("should display an about module", () => {
 test("should display a work module", () => {
   render(<Home />);
   expect(
-    screen.queryByText("Project I built with the team at work")
+    screen.queryByText("Projects I build with the team at work")
   ).toBeInTheDocument();
 });
 test("should display a footer", () => {

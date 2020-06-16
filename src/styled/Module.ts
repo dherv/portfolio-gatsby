@@ -10,9 +10,10 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Module = styled.section`
+export const Module = styled.section<{ isHero?: boolean }>`
   margin-top: 5rem;
   margin-bottom: 5rem;
+  min-height: ${(props) => props.isHero && "calc(100vh - 101px - 10rem)"};
 `;
 
 export const Title = styled(Wrapper)`

@@ -1,7 +1,8 @@
 # Orb 'circleci/node@1.1.6' resolved to 'circleci/node@1.1.6'
+# Orb 'circleci/aws-cli@1.1.0' resolved to 'circleci/aws-cli@1.1.0'
 version: 2
 jobs:
-  build-and-test:
+  build:
     docker:
     - image: circleci/node:latest
     steps:
@@ -19,18 +20,156 @@ jobs:
         key: node-deps-v1-{{ .Branch }}-{{ checksum "package.json" }}
         paths:
         - ~/project/node_modules
+    - persist_to_workspace:
+        root: .
+        paths:
+        - ./*
+  deploy:
+    docker:
+    - image: cimg/python:3.8-node
+    steps:
+    - checkout
+    - run:
+        command: |
+          AWS_CLI_VERSION_SELECTED=2
+          case $AWS_CLI_VERSION_SELECTED in
+            "1")
+              if [ "false" == "false" ] && which aws > /dev/null; then
+                  echo "The AWS CLI is already installed. Skipping."
+                  exit 0
+                fi
+
+                export PIP=$(which pip pip3 | head -1)
+                if [[ -n $PIP ]]; then
+                  if which sudo > /dev/null; then
+                    sudo $PIP install awscli --upgrade
+                  else
+                    # This installs the AWS CLI to ~/.local/bin. Make sure that ~/.local/bin is in your $PATH.
+                    $PIP install awscli --upgrade --user
+                  fi
+                elif [[ $(which unzip curl | wc -l) -eq 2 ]]; then
+                  cd
+                  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+                  unzip awscli-bundle.zip
+                  if which sudo > /dev/null; then
+                    sudo ~/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+                  else
+                    # This installs the AWS CLI to the default location (~/.local/lib/aws) and create a symbolic link (symlink) at ~/bin/aws. Make sure that ~/bin is in your $PATH.
+                    awscli-bundle/install -b ~/bin/aws
+                  fi
+                  rm -rf awscli-bundle*
+                  cd -
+                else
+                  echo "Unable to install AWS CLI. Please install pip."
+                  exit 1
+                fi
+            ;;
+            "2")
+              if [ "false" == "false" ] && which aws > /dev/null; then
+                  echo "The AWS CLI is already installed. Skipping."
+                  exit 0
+                fi
+
+                if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
+
+                cd /tmp || exit
+
+                # PLATFORM CHECK: mac vs. alpine vs. other linux
+                if uname -a | grep Darwin; then
+                  SYS_ENV_PLATFORM=darwin
+                elif uname -a | grep Linux; then
+                  SYS_ENV_PLATFORM=linux
+                else
+                  echo "This platform appears to be unsupported."
+                  uname -a
+                  exit 1
+                fi
+
+                case $SYS_ENV_PLATFORM in
+                  linux)
+                    curl -sSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    unzip awscliv2.zip
+                    $SUDO ./aws/install
+                    rm awscliv2.zip
+                    ;;
+                  darwin)
+                    curl -sSL "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+                    $SUDO installer -pkg AWSCLIV2.pkg -target /
+                    rm AWSCLIV2.pkg
+                    ;;
+                  *)
+                    echo "This orb does not currently support your platform. If you believe it should, please consider opening an issue on the GitHub repository:"
+                    echo "https://github.com/CircleCI-Public/aws-cli-orb/issues/new"
+                    exit 1
+                esac
+
+                # Installation check
+
+                if aws --version &> grep -q "aws-cli/2"; then
+                  echo "AWS CLI V2 has been installed successfully"
+                  exit 0
+                else
+                  echo "There was an issue installing the AWS CLI V2. Exiting."
+                  exit 1
+                fi
+            ;;
+            *)
+              echo "An incorrect version selection has been made."
+              exit 1
+            ;;
+          esac
+        name: Install AWS CLI v2
+    - run:
+        command: |
+          if [ -z "${AWS_PAGER}" ]; then
+            echo 'export AWS_PAGER=""' >> $BASH_ENV
+            echo "AWS_PAGER is being set to the empty string to disable all output paging for AWS CLI commands."
+            echo "You can set the 'disable-aws-pager' parameter to 'false' to disable this behavior."
+          fi
+        name: Disable AWS pager if not already configured
+    - run:
+        command: |
+          aws configure set aws_access_key_id \
+            $AWS_ACCESS_KEY_ID \
+            --profile default
+        name: Configure AWS Access Key ID
+    - run:
+        command: |
+          aws configure set aws_secret_access_key \
+            $AWS_SECRET_ACCESS_KEY \
+            --profile default
+        name: Configure AWS Secret Access Key
+    - run:
+        command: |
+          aws configure set region $AWS_REGION \
+            --profile default
+        name: Configure AWS default region
+    - run:
+        command: echo "Run your code here"
+    - attach_workspace:
+        at: .
+    - run:
+        command: npm run deploy
 workflows:
-  build-and-test:
+  build-deploy:
     jobs:
-    - build-and-test
+    - build
+    - deploy:
+        filters:
+          branches:
+            only: master
+        requires:
+        - build
   version: 2
 
 # Original config.yml file:
+# ---
 # version: 2.1
 # orbs:
 #   node: circleci/node@1.1.6
+#   aws-cli: circleci/aws-cli@1.1.0
 # jobs:
-#   build-and-test:
+#   build:
 #     executor:
 #       name: node/default
 #     steps:
@@ -38,8 +177,30 @@ workflows:
 #       - node/with-cache:
 #           steps:
 #             - run: npm install
-#             - run: npm run test:ci
+#             - run: \"npm run test:ci\"
+#       - persist_to_workspace:
+#           root: .
+#           paths:
+#             - ./*
+#   deploy:
+#     executor: aws-cli/default
+#     steps:
+#       - checkout
+#       - aws-cli/setup:
+#           aws-access-key-id: AWS_ACCESS_KEY_ID
+#           aws-region: AWS_REGION
+#           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+#       - run: echo \"Run your code here\"
+#       - attach_workspace:
+#           at: .
+#       - run: npm run deploy
 # workflows:
-#   build-and-test:
+#   build-deploy:
 #     jobs:
-#       - build-and-test
+#       - build
+#       - deploy:
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: master

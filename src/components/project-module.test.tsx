@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  render,
-  screen,
-  fireEvent,
-  waitFor,
-  queryAllByAltText,
-} from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ProjectModule from "./project-module";
-import { sampleProps, sampleQuery } from "./project-module.sample";
+import { sampleProps } from "./project-module.sample";
 
 jest.mock("gatsby", () => {
   const gatsby = jest.requireActual("gatsby");
@@ -92,34 +86,34 @@ jest.mock("gatsby", () => {
 });
 
 test("should display a project module title", () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   expect(
-    screen.queryByText("Project which take all my free time")
+    screen.queryByText("Projects I build during my free time")
   ).toBeInTheDocument();
 });
 
 test("should display a project select icon", () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   expect(screen.queryAllByText("React")).toHaveLength(2);
 });
 
 test("should display a project title", () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   expect(screen.getAllByText("watchers")).toHaveLength(2);
 });
 
 test("should display a list of tools", () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   expect(screen.getAllByText("backend, backend")).toHaveLength(1);
 });
 
 test("should display a project description", () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   expect(screen.getByText("description")).toBeInTheDocument();
 });
 
 test("should switch project when clicking a project select item", async () => {
-  render(<ProjectModule />);
+  render(<ProjectModule {...sampleProps} />);
   fireEvent.click(screen.queryAllByText("watchers")[0]);
   await waitFor(() => screen.getByText("skilldo"));
   expect(screen.queryAllByText("skilldo")).toHaveLength(1);

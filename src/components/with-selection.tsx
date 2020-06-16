@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { IProjectSelect } from "../types/interfaces";
+import {
+  IProjectSelect,
+  IGraphAllMarkdownRemark,
+  IGraphProjectNode,
+} from "../types/interfaces";
+import { Module, Title, Tabs, Panels } from "../styled/Module";
+import ModuleTitle from "./module-title";
+import ProjectSelect from "./project-select";
 
-const withSelection = (Component: React.ComponentType, query) => (props) => {
+const withSelection = (
+  Component: React.FunctionComponent<{ node: IGraphProjectNode }>,
+  query: () => IGraphAllMarkdownRemark<IGraphProjectNode>
+) => (props: Props) => {
   const [selected, setSelected] = useState<string>("");
-
+  const { isHero, title, ...passThroughProps } = props;
   const data = query();
 
   const edge = data.allMarkdownRemark.edges.find(
@@ -36,15 +46,25 @@ const withSelection = (Component: React.ComponentType, query) => (props) => {
     setSelected(title);
   };
 
+  const select = (
+    <ProjectSelect projects={projectSelect} onClick={handleClick} />
+  );
+
   return (
-    <Component
-      {...props}
-      projectSelect={projectSelect}
-      node={node}
-      selected={selected}
-      onClick={handleClick}
-    />
+    <Module isHero={isHero} as="section">
+      <Title>
+        <ModuleTitle title={title} />
+      </Title>
+      <Tabs>{select}</Tabs>
+      <Panels>
+        <Component {...passThroughProps} node={node} />
+      </Panels>
+    </Module>
   );
 };
 
+interface Props {
+  isHero: boolean;
+  title: string;
+}
 export default withSelection;

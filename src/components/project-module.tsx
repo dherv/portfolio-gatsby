@@ -2,12 +2,10 @@ import React, { FC } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import withSelection from "./with-selection";
 import Project from "./project";
-import ProjectModuleLayout from "./project-module-layout";
-import { IProjectSelect, IGraphProjectNode } from "../types/interfaces";
-import ProjectSelect from "./project-select";
+import { IGraphProjectNode } from "../types/interfaces";
 
-const ProjectModule: FC<Props> = ({ projectSelect, node, onClick }) => {
-  const project = node && (
+const ProjectModule: FC<Props> = ({ node }) => {
+  return node ? (
     <Project
       key={node.id}
       title={node.frontmatter.title}
@@ -15,22 +13,11 @@ const ProjectModule: FC<Props> = ({ projectSelect, node, onClick }) => {
       tools={node.frontmatter.tools}
       description={node.excerpt}
     ></Project>
-  );
-
-  return (
-    <ProjectModuleLayout
-      title="Project which take all my free time"
-      project={project}
-      select={<ProjectSelect projects={projectSelect} onClick={onClick} />}
-    ></ProjectModuleLayout>
-  );
+  ) : null;
 };
 
 interface Props {
-  projectSelect: IProjectSelect[];
   node: IGraphProjectNode;
-  selected: string;
-  onClick: () => void;
 }
 
 export default withSelection(ProjectModule, () =>
