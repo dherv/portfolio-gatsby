@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-container);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer > a {
+  margin: 0 2rem;
+}

@@ -1,9 +1,24 @@
-import React, { FC } from "react"
+import React, { FC } from "react";
+import NavLink from "./nav-link";
+import { INavLink } from "../types/interfaces";
+import styles from "./nav.module.css";
 
-const Nav: FC<Props> = () => {
-  return <nav></nav>
+const Nav: FC<Props> = ({ links }) => {
+  return (
+    <nav className={styles.nav}>
+      <ul>
+        {links.map(({ name, href }) => (
+          <li key={href}>
+            <NavLink href={href} name={name} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+interface Props {
+  links: INavLink[];
 }
 
-interface Props {}
-
-export default Nav
+export default Nav;

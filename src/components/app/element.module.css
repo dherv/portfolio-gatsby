@@ -1,0 +1,5 @@
+.container {
+  padding-top: var(--padding);
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}

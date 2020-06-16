@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display the app heading styled component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h5
+      class="sc-AxhUy dtbqcp"
+      width="80"
+    >
+      backend
+    </h5>
+    <p
+      class="join"
+    >
+      node, express, mysql
+    </p>
+  </div>
+</DocumentFragment>
+`;

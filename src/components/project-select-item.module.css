@@ -1,0 +1,25 @@
+.container:hover {
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+.inner_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 2rem;
+  height: 64px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element {
+  display: flex;
+  margin-left: 2rem;
+}
